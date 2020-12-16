@@ -5,7 +5,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   background-color: #1a202c;
-  
+
 }
 * {
   margin: 0;
@@ -124,7 +124,7 @@ body {
   cursor: pointer;
 }
 .btn-wrapper button:hover {
-  background-color: #c912da;
+  background-color: #cbd5e0;
 
   color: black;
 }
