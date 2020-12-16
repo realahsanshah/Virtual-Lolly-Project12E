@@ -5,6 +5,20 @@ import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { TextField, Button } from '@material-ui/core';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import {  useMutation } from '@apollo/client';
+import gql from 'graphql-tag'
+
+
+const createLollyMutation=gql`
+    mutation createLolly($recipient: String,$message: String,$sender:String,$top:String,$middle:String,$bottom:String){
+        createLolly(recipient: $recipient,message: $message,sender:$sender,top:$top,middle:$middle,bottom:$bottom){
+            message
+            lollyPath
+            sender
+            recipient
+        }
+    }
+`
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -32,9 +46,8 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
     const [top, setTop] = useState('#6b6bde');
     const [middle, setMiddle] = useState('#4ac383');
     const [bottom, setBottom] = useState('#d2ec27');
-    const [recipient, setRecipient] = useState("");
-    const [message, setMessage] = useState("");
-    const [sender, setSender] = useState("");
+
+    const [createLolly]=useMutation(createLollyMutation)
 
     const classes = useStyles();
 
@@ -90,12 +103,26 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                 </div>
                 <div className="formContainer">
                     <Formik
-                        initialValues={{ recipient: recipient, message: message, sender: sender }}
+                        initialValues={{ recipient: "", message: "", sender: "" }}
                         validationSchema={schema}
                         onSubmit={(value, { resetForm }) => {
                             console.log("Recipient", value.recipient);
                             console.log("Message", value.message);
                             console.log("Sender", value.sender);
+                  
+                            createLolly({
+                                variables:{
+                                    recipient:value.recipient,
+                                    message:value.message,
+                                    sender:value.sender,
+                                    top:top,
+                                    middle:middle,
+                                    bottom:bottom,
+                                }
+                            })
+                            setTop("#6b6bde")
+                            setMiddle("#4ac383")
+                            setBottom("#d2ec27")
 
                             resetForm();
                         }}

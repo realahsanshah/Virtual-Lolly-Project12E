@@ -2,7 +2,6 @@ import * as React from "react"
 
 
 
-
 const Lolly = ({fillTop,fillMiddle,fillBottom}) => {
   return (
     <svg className="lollipop" width="163px" height="431px" viewBox="0 0 163 431" version="1.1" xmlns="http://www.w3.org/2000/svg">

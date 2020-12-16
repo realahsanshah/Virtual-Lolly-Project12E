@@ -18,7 +18,7 @@ const typeDefs = gql`
     lollyPath:String
   }
   type Mutation{
-    createLolly(recipient: String!,message: String!,sender:String!,top:String!,middle:String!,bottom:String!):Lolly
+    createLolly(recipient: String,message: String,sender:String,top:String,middle:String,bottom:String):Lolly
   }
 `;
 
@@ -43,6 +43,7 @@ const resolvers = {
       console.log("result",result.data);
 
       return result.data
+      // return args;
     }
   }
 };
