@@ -2,7 +2,6 @@ const { ApolloServer, gql } = require("apollo-server-lambda");
 
 const faunadb=require('faunadb'),
   query=faunadb.query;
-const shortId=require('shortid')
 
 const typeDefs = gql`
   type Query {
@@ -19,7 +18,7 @@ const typeDefs = gql`
     lollyPath:String
   }
   type Mutation{
-    createLolly(recipient: String,message: String,sender:String,top:String,middle:String,bottom:String):Lolly
+    createLolly(recipient: String,message: String,sender:String,top:String,middle:String,bottom:String,lollyPath:String):Lolly
   }
 `;
 
@@ -49,8 +48,6 @@ const resolvers = {
   Mutation:{
     createLolly:async (_,args)=>{
       
-      const id=shortId.generate();
-      args.lollyPath=id;
       console.log("Lolly",args)
       const result=await client.query(
         query.Create(query.Collection("lolly"),{

@@ -7,6 +7,9 @@ import { TextField, Button } from '@material-ui/core';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import {  useMutation } from '@apollo/client';
 import gql from 'graphql-tag'
+import { navigate } from 'gatsby';
+import shortId from 'shortid';
+
 
 
 const createLollyMutation=gql`
@@ -109,7 +112,7 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                             console.log("Recipient", value.recipient);
                             console.log("Message", value.message);
                             console.log("Sender", value.sender);
-                  
+                            var id=shortId.generate();
                             createLolly({
                                 variables:{
                                     recipient:value.recipient,
@@ -118,12 +121,16 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                                     top:top,
                                     middle:middle,
                                     bottom:bottom,
+                                    lollyPath:id
                                 }
-                            })
+                            }).then(result=>{
+                                console.log(result)
+                                navigate(`/lolies/${id}`)
+                            });
+                            
                             setTop("#6b6bde")
                             setMiddle("#4ac383")
                             setBottom("#d2ec27")
-
                             resetForm();
                         }}
                     >
