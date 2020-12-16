@@ -6,7 +6,8 @@ const shortId=require('shortid')
 
 const typeDefs = gql`
   type Query {
-    hello: String
+    lollies:[Lolly]
+    lollyByPath(lollyPath:String):Lolly
   }
   type Lolly {
     recipient: String
@@ -22,15 +23,32 @@ const typeDefs = gql`
   }
 `;
 
+const client=new faunadb.Client({secret:process.env.FAUNADB_SERVER_SECRET})
+
 const resolvers = {
   Query: {
-    hello: () => {
-      return "Hello, world!";
+    lollies: async()=>{
+      var result = await client.query(
+        query.Map(
+          query.Paginate(query.Documents(query.Collection("lolly"))),
+          query.Lambda(x => query.Get(x))
+        )
+      )
+      const lollies=result.data.map(lolly=>lolly.data);
+      console.log("result",lollies);
+      // return "result"
+      return lollies;
     },
+    lollyByPath:async(_,{lollyPath})=>{
+      const result=await client.query(
+            query.Get(query.Match(query.Index("lolly_by_path"),lollyPath))
+          )
+          return result.data;
+    }
   },
   Mutation:{
     createLolly:async (_,args)=>{
-      const client=new faunadb.Client({secret:process.env.FAUNADB_SERVER_SECRET})
+      
       const id=shortId.generate();
       args.lollyPath=id;
       console.log("Lolly",args)
