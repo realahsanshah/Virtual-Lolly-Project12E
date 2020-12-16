@@ -14,8 +14,12 @@ const useStyles = makeStyles((theme: Theme) =>
             width: '100%',
             fontSize: '14px',
         },
+        input:{
+            color:"white"
+        },
         button: {
-            color: "white"
+            color: "white",
+            borderColor:"white"
         }
     }));
 
@@ -107,10 +111,14 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                                         name="recipient"
                                         id="recipient"
                                         className={classes.field}
+                                        color="text.secondary"
+                                        InputProps={{
+                                            className:classes.input
+                                          }}
                                     />
                                     <br />
                                     <ErrorMessage name='recipient' render={(msg: string) => (
-                                        <span style={{ color: "red", fontSize: '18sp' }}>{msg}</span>
+                                        <span style={{ color: "white", fontSize: '18sp' }}>{msg}</span>
                                     )} />
                                     <br />
                                 </div>
@@ -123,10 +131,13 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                                         name="message"
                                         id="message"
                                         className={classes.field}
+                                        InputProps={{
+                                            className:classes.input
+                                          }}
                                     />
                                     <br />
                                     <ErrorMessage name='message' render={(msg: string) => (
-                                        <span style={{ color: "red", fontSize: '18sp' }}>{msg}</span>
+                                        <span style={{ color: "white", fontSize: '18sp' }}>{msg}</span>
                                     )} />
                                     <br />
                                 </div>
@@ -139,10 +150,13 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                                         name="sender"
                                         id="sender"
                                         className={classes.field}
+                                        InputProps={{
+                                            className:classes.input
+                                          }}
                                     />
                                     <br />
                                     <ErrorMessage name='sender' render={(msg: string) => (
-                                        <span style={{ color: "red", fontSize: '18sp' }}>{msg}</span>
+                                        <span style={{ color: "white", fontSize: '18sp' }}>{msg}</span>
                                     )} />
                                     <br />
                                 </div>
