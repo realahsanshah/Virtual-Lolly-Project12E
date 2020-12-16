@@ -1,16 +1,17 @@
 import * as React from "react"
+import Header from "../components/Header"
 import Lolly from '../components/Lolly'
 
 
 const IndexPage = () => {
   return (
-    <main>
+    <div>
       <title>Virtual Lolly</title>
-      <h1>Hello World</h1>
+      <Header/>
       <div>
         <Lolly fillTop="#deaa43" fillBottom="#d52358" fillMiddle="#e95946"/>
       </div>
-    </main>
+    </div>
   )
 }
 

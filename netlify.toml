@@ -1,0 +1,4 @@
+[build]
+    command="npm run build && cd functions/lolly && npm i"
+    publish="public/"
+    functions="functions/"

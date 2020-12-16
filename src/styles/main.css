@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #1a202c;
+  
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+.header-container {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.header-container h1{
+  font-size: 50px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  font-family: 'Dancing Script', cursive !important;
+}
+.lolly-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.lolly-list .lollipop {
+  height: 300px;
+}
+
+.createLollyButton {
+  font-size: 1.5em;
+  background-color: #272727;
+  border-style: solid;
+  border-radius: 20em;
+  border-color: violet;
+  padding: 1rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+.createLollyButton:hover {
+  background-color: rgba(240, 47, 159, 0.4);
+}
+
+.createLollyButton:focus {
+  border: none;
+  outline: none;
+}
+.lollyContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.colorContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-around;
+  height: 75%;
+  margin-top: 1rem;
+  padding: 0 40px;
+}
+.colorContainer label {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 20px;
+  overflow: hidden;
+}
+.colorContainer input {
+  width: 80px;
+  height: 80px;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+.formContainer {
+  background-color: #2d3748;
+  padding: 30px 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 330px;
+}
+.formContainer input,
+.formContainer textarea {
+  padding: 8px 8px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 2px;
+  border: none;
+}
+.formContainer label {
+  color: #cbd5e0;
+  font-weight: 100;
+  font-size: 15px;
+  padding: 0px 0 4px 0;
+  text-transform: capitalize;
+}
+.btn-wrapper{
+  margin-top: 50px;
+  text-align: center;
+}
+.btn-wrapper button {
+  width: 300px;
+  font-size: 14px;
+  border: 1px solid #cbd5e0;
+  text-transform: capitalize;
+  padding: 10px 10px;
+  border-radius: 50px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn-wrapper button:hover {
+  background-color: #c912da;
+
+  color: black;
+}
+.formBtn-wrapper{
+  margin-top: 10px;
+}
+.formBtn-wrapper button{
+  width: 80px;
+  height: 30px;
+  text-transform: capitalize;
+  font-size: 16px;
+  border: none;
+  background-color:#c912da ;
+  color: white;
+  cursor: pointer;
+}
+
+
+.freezedLollyCardWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.freezedLollyData {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0px 0 80px;
+  max-width: 400px;
+}
+.freezedLollyData > .linkWrapper > h4 {
+  color: #cbd5e0;
+  font-weight: 300;
+  text-align: center;
+}
+.freezedLollyData > .linkWrapper > p {
+  color: #4c51bf;
+  text-align: center;
+  padding: 20px 0px;
+  margin: 10px 0;
+  background-color: #2d3748;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.freezedLollyCard {
+  background-color: #2d3748;
+  color: #f3f3f3;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+.freezedLollyCard h1 {
+  text-transform: capitalize;
+  padding: 10px 0;
+  font-size: 20px;
+}
+.freezedLollyCard p {
+  padding: 0px 0 20px 0;
+  color: #cbd5e0;
+}
+.freezedLollyCard h3 {
+  color: #cbd5e0;
+  position: relative;
+  right: 0;
+  text-align: right;
+}
+.recivermessage {
+  color: #cbd5e0;
+  text-align: center;
+  padding-top: 30px;
+}
+.loderWrapper {
+  text-align: center;
+  margin-top: 100px;
+}
