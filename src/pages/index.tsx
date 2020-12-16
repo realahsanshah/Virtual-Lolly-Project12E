@@ -27,7 +27,7 @@ const IndexPage = () => {
         />
       </div>
       <div className='btn-wrapper'>
-        <button className='' onClick={() => navigate('/createNew')}>Send a Lolly to your friend</button>
+        <button className='' onClick={() => navigate('/sendLolly')}>Send a Lolly to your friend</button>
       </div>
     </div>
   )
