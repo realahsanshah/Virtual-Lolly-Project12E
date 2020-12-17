@@ -125,7 +125,7 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                                 }
                             }).then(result=>{
                                 console.log(result)
-                                navigate(`/lolies/${id}`)
+                                // navigate(`/lolies/${id}`)
                             });
                             
                             setTop("#6b6bde")
