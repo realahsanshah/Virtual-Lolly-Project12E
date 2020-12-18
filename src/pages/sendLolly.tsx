@@ -5,14 +5,14 @@ import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { TextField, Button } from '@material-ui/core';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import {  useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag'
 import { navigate } from 'gatsby';
 import shortId from 'shortid';
 
 
 
-const createLollyMutation=gql`
+const createLollyMutation = gql`
     mutation createLolly($recipient: String,$message: String,$sender:String,$top:String,$middle:String,$bottom:String){
         createLolly(recipient: $recipient,message: $message,sender:$sender,top:$top,middle:$middle,bottom:$bottom){
             message
@@ -31,12 +31,12 @@ const useStyles = makeStyles((theme: Theme) =>
             width: '100%',
             fontSize: '14px',
         },
-        input:{
-            color:"white"
+        input: {
+            color: "white"
         },
         button: {
             color: "white",
-            borderColor:"white"
+            borderColor: "white"
         }
     }));
 
@@ -50,7 +50,7 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
     const [middle, setMiddle] = useState('#4ac383');
     const [bottom, setBottom] = useState('#d2ec27');
 
-    const [createLolly]=useMutation(createLollyMutation)
+    const [createLolly] = useMutation(createLollyMutation)
 
     const classes = useStyles();
 
@@ -69,6 +69,8 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
 
     return (
         <div className="container">
+            <title>Virtual Lolly</title>
+
             <Header />
             <div className="lollyContainer">
                 <div>
@@ -112,22 +114,22 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                             console.log("Recipient", value.recipient);
                             console.log("Message", value.message);
                             console.log("Sender", value.sender);
-                            var id=shortId.generate();
+                            var id = shortId.generate();
                             createLolly({
-                                variables:{
-                                    recipient:value.recipient,
-                                    message:value.message,
-                                    sender:value.sender,
-                                    top:top,
-                                    middle:middle,
-                                    bottom:bottom,
-                                    lollyPath:id
+                                variables: {
+                                    recipient: value.recipient,
+                                    message: value.message,
+                                    sender: value.sender,
+                                    top: top,
+                                    middle: middle,
+                                    bottom: bottom,
+                                    lollyPath: id
                                 }
-                            }).then(result=>{
+                            }).then(result => {
                                 console.log(result)
                                 // navigate(`/lolies/${id}`)
                             });
-                            
+
                             setTop("#6b6bde")
                             setMiddle("#4ac383")
                             setBottom("#d2ec27")
@@ -147,8 +149,8 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                                         className={classes.field}
                                         color="text.secondary"
                                         InputProps={{
-                                            className:classes.input
-                                          }}
+                                            className: classes.input
+                                        }}
                                     />
                                     <br />
                                     <ErrorMessage name='recipient' render={(msg: string) => (
@@ -166,8 +168,8 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                                         id="message"
                                         className={classes.field}
                                         InputProps={{
-                                            className:classes.input
-                                          }}
+                                            className: classes.input
+                                        }}
                                     />
                                     <br />
                                     <ErrorMessage name='message' render={(msg: string) => (
@@ -185,8 +187,8 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                                         id="sender"
                                         className={classes.field}
                                         InputProps={{
-                                            className:classes.input
-                                          }}
+                                            className: classes.input
+                                        }}
                                     />
                                     <br />
                                     <ErrorMessage name='sender' render={(msg: string) => (

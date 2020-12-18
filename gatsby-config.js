@@ -5,7 +5,7 @@ module.exports = {
       options: {
         typeName: "Lolly",
         fieldName: "lollies",
-        url: "https://virtual-lolly-project12e.netlify.app/.netlify/functions/lolly",
+        url: "/.netlify/functions/lolly",
       },
     },
   ],

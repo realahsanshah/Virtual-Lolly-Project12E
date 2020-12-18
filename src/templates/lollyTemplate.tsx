@@ -41,6 +41,7 @@ const LollyTemplate = ({pageContext}) => {
       }
     return (
         <div className="container">
+            <title>Virtual Lolly</title>
             <Header />
             {loading?<CircularProgress/>:
 <div>
@@ -58,7 +59,7 @@ const LollyTemplate = ({pageContext}) => {
                 <div className="linkWrapper">
                     <h4>Share this link with your frined</h4>
                     <a href={`/lollies/${data?.lollyByPath?.lollyPath}`}>Go to Link</a>
-                    <p>{`/lollies/${data?.lollyByPath?.lollyPath}`}</p>
+                    <p>https://virtual-lolly-project12e.netlify.app/{`/lollies/${data?.lollyByPath?.lollyPath}`}</p>
                 </div>
                 <div className="freezedLollyCard">
                     <h1>to: {data?.lollyByPath?.recipient}</h1>
