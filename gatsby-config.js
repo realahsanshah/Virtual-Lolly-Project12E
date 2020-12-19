@@ -13,7 +13,7 @@ module.exports = {
     //     forceFullSync: true,
     //     refetchInterval: 3,
     //   },
-    },
+    // },
   ],
 };
 
