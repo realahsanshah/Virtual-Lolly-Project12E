@@ -4,15 +4,15 @@ process.env.NODE_ENV==="development"?baseUrl="http://localhost:8888":"https://vi
 
 module.exports = {
   plugins: [
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        typeName: "Lolly",
-        fieldName: "lollies",
-        url: `https://virtual-lolly-project12e.netlify.app/.netlify/functions/lolly`,
-        forceFullSync: true,
-        refetchInterval: 3,
-      },
+    // {
+    //   resolve: "gatsby-source-graphql",
+    //   options: {
+    //     typeName: "Lolly",
+    //     fieldName: "lollies",
+    //     url: `${baseUrl}/.netlify/functions/lolly`,
+    //     forceFullSync: true,
+    //     refetchInterval: 3,
+    //   },
     },
   ],
 };
