@@ -1,6 +1,6 @@
 console.log("env",process.env.NODE_ENV);
 var baseUrl;
-process.env.NODE_ENV==="development"?baseUrl="http://localhost:8888":"https://virtual-lolly-project12e.netlify.app/"
+process.env.NODE_ENV==="development"?baseUrl="http://localhost:8888":"https://virtual-lolly-project12e.netlify.app"
 
 module.exports = {
   plugins: [
