@@ -9,7 +9,9 @@ module.exports = {
       options: {
         typeName: "Lolly",
         fieldName: "lollies",
-        url: `${baseUrl}/.netlify/functions/lolly`,
+        url: `https://virtual-lolly-project12e.netlify.app/.netlify/functions/lolly`,
+        forceFullSync: true,
+        refetchInterval: 3,
       },
     },
   ],

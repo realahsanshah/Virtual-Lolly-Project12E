@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Lolly from '../components/Lolly';
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, CircularProgress } from '@material-ui/core';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag'
@@ -124,7 +124,10 @@ const SendLolly: React.SFC<SendLollyProps> = () => {
                                     bottom: bottom,
                                 }
                             }).then(result => {
-                                console.log(result)
+                                // console.log(result)
+                                console.log("Result",result.data.createLolly.lollyPath);
+                                
+                                setTimeout(()=>navigate(`/lollies/${result.data.createLolly.lollyPath}`),5000)
                                 // navigate(`/lolies/${id}`)
                             });
 

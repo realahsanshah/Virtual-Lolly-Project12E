@@ -23,6 +23,10 @@ const query = gql`
     }
 `
 
+var baseUrl;
+process.env.NODE_ENV==="development"?baseUrl="http://localhost:8888":"https://virtual-lolly-project12e.netlify.app"
+
+
 const LollyTemplate = ({pageContext}) => {
     const [top, setTop] = useState('#6b6bde');
     const [middle, setMiddle] = useState('#4ac383');
@@ -58,7 +62,7 @@ const LollyTemplate = ({pageContext}) => {
             <div className="freezedLollyData">
                 <div className="linkWrapper">
                     <h4>Share this link with your frined</h4>
-                    <a href={`/lollies/${data?.lollyByPath?.lollyPath}`}>Go to Link</a>
+                    <a href={`${baseUrl}/lollies/${data?.lollyByPath?.lollyPath}`}>Go to Link</a>
                     <p>https://virtual-lolly-project12e.netlify.app/{`/lollies/${data?.lollyByPath?.lollyPath}`}</p>
                 </div>
                 <div className="freezedLollyCard">
